@@ -5,7 +5,9 @@ public class Perfil extends Pessoa{
 
     public void printP(){
        super.print();
-       System.out.println("Sobre mim: "+this.sobreMim);
+        System.out.println("****************************************");
+        System.out.println("Sobre mim: "+this.sobreMim);
+        System.out.println("****************************************");
     }
 
     @Override

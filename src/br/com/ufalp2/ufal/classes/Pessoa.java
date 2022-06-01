@@ -8,7 +8,9 @@ public abstract class Pessoa {
 
     public void print(){
         System.out.println("Nome: "+nome);
+        System.out.println("****************************************");
         System.out.println("Idade: "+idade);
+        System.out.println("****************************************");
         System.out.println("Cpf: "+cpf);
     }
 

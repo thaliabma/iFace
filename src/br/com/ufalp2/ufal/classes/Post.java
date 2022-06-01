@@ -7,7 +7,7 @@ public class Post extends Mensagem{
 
 
     public void postar(Conta remetente){
-        System.out.println("-------- Novo Post --------");
+        System.out.println("-------- Novo Post (Escreva algo para o seu feed de posts) --------");
         Scanner message = new  Scanner(System.in);
         System.out.print("~> ");
         String mess = message.nextLine();

@@ -50,10 +50,13 @@ public class Conta extends Perfil{
     }
 
     public void visualizarConta(){
+        System.out.println("                 MINHA CONTA            \n");
         super.printP();
         System.out.println("Email: "+this.login);
+        System.out.println("****************************************");
         System.out.println("Senha: "+this.senha);
-        System.out.println("Seus Amigos:");
+        System.out.println("****************************************");
+        System.out.println("             SEUS AMIGOS:               ");
         if (this.amigos != null && this.amigos.size() != 0  ){
 
         for (Conta m:
@@ -63,7 +66,10 @@ public class Conta extends Perfil{
         }else{
             System.out.println("O usuário não tem amigos adicionados.");
         }
-        System.out.println("Suas Solicitações:");
+        System.out.println("****************************************");
+
+        System.out.println("             SUAS SOLICITAÇÕES:               ");
+
 
         if (this.solicitacoes != null && this.solicitacoes.size() != 0 ){
             for (Conta m:
@@ -73,25 +79,33 @@ public class Conta extends Perfil{
         }else{
             System.out.println("O usuário não tem solicitações.");
         }
-        System.out.println("Suas Comunidades:");
+        System.out.println("****************************************");
+
+        System.out.println("             SUAS COMUNIDADES:             ");
 
         if (this.comunidades != null && this.comunidades.size() != 0 ){
             for (Comunidade m:
                     this.comunidades) {
                 System.out.println("- "+m.getTitulo());
+                System.out.println("_______________________________________");
+
             }
         }else{
             System.out.println("O usuário não participa de comunidades.");
         }
-        System.out.println("Suas Mensagens:");
+        System.out.println("****************************************");
 
-        if (this.comunidades != null && this.comunidades.size() != 0 ){
-            for (Comunidade m:
-                    this.comunidades) {
-                System.out.println("- "+m.getTitulo());
+        System.out.println("             SUAS MENSAGENS:             ");
+
+        if (this.mensagens != null && this.mensagens.size() != 0 ){
+            for (MensagemPrivada m:
+                    this.mensagens) {
+                System.out.println("De: "+m.remetente.nome);
+                System.out.println("- "+m.corpo);
+                System.out.println("_______________________________________");
             }
         }else{
-            System.out.println("O usuário não participa de comunidades.");
+            System.out.println("O usuário não tem mensagens.");
         }
     }
 
@@ -105,44 +119,103 @@ public class Conta extends Perfil{
         System.out.println("{5} Cpf: "+super.cpf);
         System.out.println("{6} Sobre mim: "+super.sobreMim);
         System.out.print("~> ");
-        int result = input.nextInt();
+        int result = 0;
+        try {
+            result = Integer.parseInt(input.nextLine());
+        } catch (NumberFormatException e) {
+        }
         System.out.println("------------------- ");
-
         switch (result){
             case 1:
+                try{
                 System.out.print("Novo Email: ");
                 String novo = input.next();
-                System.out.println("\n");
+
+                if (!novo.contains("@")){
+                    throw new NaoEhEmailException(novo);
+                }
+
                 this.login = novo;
+                System.out.print("\nEditado!\n\n");
+                } catch (NaoEhEmailException e) {
+                    System.out.println("----------------------------");
+                    System.out.println("Insira um e-mail válido!");
+                    System.out.println("----------------------------");
+                }
                 break;
             case 2:
                 System.out.print("Novo Senha: ");
                 String novo1 = input.next();
-                System.out.println("\n");
                 this.senha = novo1;
+                System.out.print("\nEditado!\n\n");
+
                 break;
             case 3:
                 System.out.print("Novo Nome: ");
                 String novo2 = input.next();
-                super.nome = novo2;
+                try {
+                    if (!novo2.matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ'\s]+$")){
+                        throw new SomenteLetrasException(nome);
+                    }
+                    super.nome = novo2;
+                    System.out.print("\nEditado!\n\n");
+                } catch (SomenteLetrasException e) {
+                    System.out.println("----------------------------");
+                    System.out.println("Insira um nome válido!");
+                    System.out.println("----------------------------");
+                }
                 break;
             case 4:
                 System.out.print("Idade: ");
-                int novo3 = input.nextInt();
-                super.idade = novo3;
-                break;
+                int novo3 = 0;
+                try
+                {
+                    novo3 = Integer.parseInt(input.nextLine());
+                    super.idade = novo3;
+                    System.out.print("\nEditado!\n\n");
+                }
+                catch(NumberFormatException e)
+                {
+                    System.out.println("----------------------------");
+                    System.out.println("Insira uma idade válida!");
+                    System.out.println("----------------------------");
+                }
+                finally{
+                    break;
+                }
+
             case 5:
                 System.out.print("CPF: ");
                 String novo4 = input.next();
-                super.cpf = novo4;
+                try{
+                    if (!novo4.matches("[0-9]*")){
+                        throw new SomenteNumeroException(novo4);
+                    }
+                    if (novo4.length() != 11){
+                        throw new CpfValidoException(novo4);
+
+                    }
+                    super.cpf = novo4;
+                    System.out.print("\nEditado!\n\n");
+                } catch (SomenteNumeroException e) {
+                    System.out.println("----------------------------");
+                    System.out.println("Insira um cpf válido!");
+                    System.out.println("----------------------------");
+                } catch (CpfValidoException e) {
+                    System.out.println("----------------------------");
+                    System.out.println("CPF precisa conter 11 dígitos!");
+                    System.out.println("----------------------------");
+                }
                 break;
             case 6:
                 System.out.print("Sobre Mim: ");
                 String novo5 = input.next();
                 super.sobreMim = novo5;
+                System.out.print("\nEditado!\n\n");
+
                 break;
             default:
-                System.out.println("Opção inválida!");
+                System.out.println("Opção inválida!\n");
                 break;
         }
 
