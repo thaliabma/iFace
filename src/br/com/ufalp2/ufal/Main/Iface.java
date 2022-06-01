@@ -142,7 +142,7 @@ public class Iface {
                             System.out.println("-"+usuarios.get(usuarioLogado).getAmigos().get(i).getNome());
                         }
                     }else{
-                        System.out.println("Sem amigos adicionados");
+                        System.out.println("Sem amigos adicionados.");
                     }
                     System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
                     System.out.println("                                     [COMUNIDADES]");
