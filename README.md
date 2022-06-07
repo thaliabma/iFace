@@ -47,13 +47,17 @@
           <li>Linhas 199, 227, 261, 284 da classe main "Iface": Poderiam ser substituídas por somente uma variável (a que foi criada na linha 122), já que elas tem uma única função de ler a opção.</li>
           <li>Linhas 148, 155, 170, 189 e 212  da classe "Conta": Poderiam ser substituídas por somente uma variável (criada fora do switch), já que elas tem uma única função de ler a entrada de String.</li>
         </ul>
-      <li><strong>Parâmetros nunca utilizados: </strong> </li>
-  
-        <ul>
-          <li>Linha 29  classe "Iface"</li>
-          <li>Linhas 53, 61, 69, 96 e 100 da classe main "Iface": Poderia colocar direto em um objeto e depois colocar como parâmetro no método chamado.</li>
-          <li>Linhas 199, 227, 261, 284 da classe main "Iface": Poderiam ser substituídas por somente uma variável (a que foi criada na linha 122), já que elas tem uma única função de ler a opção.</li>
-          <li>Linhas 148, 155, 170, 189 e 212  da classe "Conta": Poderiam ser substituídas por somente uma variável (criada fora do switch), já que elas tem uma única função de ler a entrada de String.</li>
+      <li><strong>Speculative Generality: </strong> </li>
+         <ul>
+          <li>Parâmetros das linhas 29, 46 classe "Conta" </li>
+          <li>Variáveis das linhas 33, 46 classe main "Iface" </li>
         </ul>
     </ul>
+  <li><strong>Feature Envy: Linha 109 da classe "Conta"- O método utiliza mais informações da classe mãe do que dele próprio.</strong></li>
+  <li><strong>Lazy Class: </strong>
+         <ul>
+          <li>Classe "Pessoa" só gera um filho, a classe "Perfil": Poderia ser somente uma classe com informações da pessoa e não gerar ninguém, já que não precisa criar mais de uma classe</li>
+          <li>Classe "Perfil" só gera um filho "Conta": Poderia ser somente uma classe com informações da pessoa e não gerar ninguém, já que não precisa criar mais de uma classe</li>
+        </ul></li>
+  
 </ol>
