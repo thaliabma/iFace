@@ -19,17 +19,10 @@
 <ol>
   <li><strong>Código grande (Bloaters)</strong></li>
   <ul>
-  <li><strong>A presença de menus na classe main</strong>: Poderia estar em uma classe de menus </li>
+  <li><strong>A presença de menus na classe main</strong>: Poderia estar em uma classe de menus </li> (CORRIGIDO -> DESIGN PATTERN: 'Extract Method')
     <ul>
-      <li>Linha 49 da classe main "Iface"</li>
-      <li>Linha 92 da classe main "Iface"</li>
-      <li>Linha 125 da classe main "Iface"</li>
+      <li>Linha 125 da classe main "Iface"</li> 
       <li>Linha 264 da classe main "Iface"</li>
-  </ul>
-    <li><strong>"switch case" não deveria ter muitas linhas</strong>: Poderia colocar as linhas em métodos e no switch só chamar esses métodos.</li>
-     <ul>
-      <li>Linha 325 da classe main "Iface"</li>
-  </ul>
   </ul>
   <li><strong>"switch case" não deveria ter muitas linhas</strong>: Poderia colocar as linhas em métodos e no switch só chamar esses métodos.</li>
   </ul>
