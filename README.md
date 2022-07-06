@@ -19,14 +19,15 @@
 <ol>
   <li><strong>Código grande (Bloaters)</strong></li>
   <ul>
-  <li><strong>A presença de menus na classe main</strong>: Poderia estar em uma classe de menus </li> (CORRIGIDO -> DESIGN PATTERN: 'Extract Method')
+  <li><strong>Código grande na classe main "Iface"</strong> (CORRIGIDO -> Design Pattern "Facade")</li>
+  <li><strong>A presença de menus na classe main</strong>: Poderia estar em uma classe de menus (CORRIGIDO -> Extract Method)</li> 
     <ul>
       <li>Linha 125 da classe main "Iface"</li> 
       <li>Linha 264 da classe main "Iface"</li>
   </ul>
-  <li><strong>"switch case" não deveria ter muitas linhas</strong>: Poderia colocar as linhas em métodos e no switch só chamar esses métodos.</li>
+  <li><strong>"switch case" não deveria ter muitas linhas</strong> (CORRIGIDO -> Design Pattern "Command")</li>
   </ul>
-  <li><strong>Switch dentro de outro switch</strong></li>
+  <li><strong>Switch dentro de outro switch </strong> (CORRIGIDO -> Design Pattern "Command")</li>
   <ul>
   <li><strong>Linha: 176 da classe main "Iface"</strong>:Um switch dentro de outro switch que tem o papel de administrar as opções do menu. Poderia ser feito era um método com as funções desse switch e só precisar chamar. </li>
   <li><strong>Linha: 278 da classe main "Iface"</strong>:Um switch dentro de outro switch que está dentro de outro switch e tem o papel de administrar novamente um menu das comunidades. Poderia ser resolvido com a criação de um método dentro da classe "Comunidade" e depois só chamar.</li>
