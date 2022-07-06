@@ -13,3 +13,5 @@
   <li><strong>SomenteLetrasException</strong>: Verifica se a entrada tem somente letras, para tratar o nome do usuário.</li> 
   <li><strong>SomenteNumeroException</strong>: Verifica se a entrada tem somente números, em caso de verificar a idade ou CPF do usuário.</li>
 </ul>
+
+https://github.com/thaliabma/iFace/tree/AllExceptions

@@ -1,4 +1,4 @@
-package br.com.ufalp2.ufal.classes;
+package br.com.ufalp2.ufal.Exceptions;
 
 public class SomenteLetrasException extends Exception{
     protected String palavra;

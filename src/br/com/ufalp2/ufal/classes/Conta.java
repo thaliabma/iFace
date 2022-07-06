@@ -1,17 +1,19 @@
 package br.com.ufalp2.ufal.classes;
 
+import br.com.ufalp2.ufal.Exceptions.CpfValidoException;
+import br.com.ufalp2.ufal.Exceptions.NaoEhEmailException;
+import br.com.ufalp2.ufal.Exceptions.SomenteLetrasException;
+import br.com.ufalp2.ufal.Exceptions.SomenteNumeroException;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Conta extends Perfil{
     private String login;
-
-
-
     private String senha;
-    private List<Conta> amigos = new ArrayList<>(); ;
-    private List<Conta> solicitacoes = new ArrayList<>(); ;
+    private List<Conta> amigos = new ArrayList<>();
+    private List<Conta> solicitacoes = new ArrayList<>();
     private List<MensagemPrivada> mensagens = new ArrayList<>();
     private List<Comunidade> comunidades = new ArrayList<>();
     private List<Post> posts = new ArrayList<>();

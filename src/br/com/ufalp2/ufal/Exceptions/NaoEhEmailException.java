@@ -1,4 +1,4 @@
-package br.com.ufalp2.ufal.classes;
+package br.com.ufalp2.ufal.Exceptions;
 
 public class NaoEhEmailException extends Exception{
     protected String email;

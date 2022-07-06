@@ -49,6 +49,9 @@ public class Comunidade {
         System.out.print("Comunidade criada! ");
     }
 
+    public void OpcoesComunidade(){
+
+    }
 
     public Comunidade(String titulo, String  descricao, String criador) {
         this.titulo = titulo;
