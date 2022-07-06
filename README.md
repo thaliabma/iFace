@@ -19,23 +19,23 @@
 <ol>
   <li><strong>Código grande (Bloaters)</strong></li>
   <ul>
-  <li><strong>Código grande na classe main "Iface"</strong> </br>   (CORRIGIDO -> Design Pattern "Facade"
+  <li><strong>Código grande na classe main "Iface"</strong> </br>   (<strong>CORRIGIDO</strong> -> Design Pattern "Facade"
   </br>  É possível ver a diminuição de linhas da classe "Iface" aqui, utilizando o padrão de fachada: https://github.com/thaliabma/iFace/blob/AllExceptions/src/br/com/ufalp2/ufal/Main/Iface.java) </li>
     
-  <li><strong>A presença de menus na classe main</strong>: Poderia estar em uma classe de menus  </br>   (CORRIGIDO -> Extract Method
+  <li><strong>A presença de menus na classe main</strong>: Poderia estar em uma classe de menus  </br>   (<strong>CORRIGIDO</strong> -> Extract Method
   </br>  É possível ver a criação de métodos de menus na classe "Menu": https://github.com/thaliabma/iFace/blob/AllExceptions/src/br/com/ufalp2/ufal/classes/Menu.java) </li></li> 
     <ul>
       <li>Linha 125 da classe main "Iface"</li> 
       <li>Linha 264 da classe main "Iface"</li>
   </ul>
-  <li><strong>"switch case" não deveria ter muitas linhas</strong> </br> (CORRIGIDO -> Design Pattern "Command"
+  <li><strong>"switch case" não deveria ter muitas linhas</strong> </br> (<strong>CORRIGIDO</strong> -> Design Pattern "Command"
   </br>  É possível ver a diminuição de linhas e eliminação do switch no menu, subtituindo por classes de opções utilizando o padrão de projeto "Command" aqui:https://github.com/thaliabma/iFace/tree/AllExceptions/src/br/com/ufalp2/ufal/Command</li>
   </ul>
-  <li><strong>Switch dentro de outro switch </strong> </br> (CORRIGIDO -> Design Pattern "Command"
+  <li><strong>Switch dentro de outro switch </strong> </br> (<strong>CORRIGIDO</strong> -> Design Pattern "Command"
   </br>  A utilização do switch foi substituída por um array, também foi utilizado o padrão de projeto "Command" aproveitando a correção do Code Smell anterior aqui: https://github.com/thaliabma/iFace/blob/AllExceptions/src/br/com/ufalp2/ufal/Fachadas/estaLogadoFacade.java)</li>
   <ul>
-  <li><strong>Linha: 176 da classe main "Iface"</strong>:Um switch dentro de outro switch que tem o papel de administrar as opções do menu. Poderia ser feito era um método com as funções desse switch e só precisar chamar. (CORRIGIDO com o padrão de projeto "Command")</li> 
-  <li><strong>Linha: 278 da classe main "Iface"</strong>:Um switch dentro de outro switch que está dentro de outro switch e tem o papel de administrar novamente um menu das comunidades. Poderia ser resolvido com a criação de um método dentro da classe "Comunidade" e depois só chamar. (CORRIGIDO com o padrão de projeto "Command")</li>
+  <li><strong>Linha: 176 da classe main "Iface"</strong>:Um switch dentro de outro switch que tem o papel de administrar as opções do menu. Poderia ser feito era um método com as funções desse switch e só precisar chamar. (<strong>CORRIGIDO</strong> com o padrão de projeto "Command")</li> 
+  <li><strong>Linha: 278 da classe main "Iface"</strong>:Um switch dentro de outro switch que está dentro de outro switch e tem o papel de administrar novamente um menu das comunidades. Poderia ser resolvido com a criação de um método dentro da classe "Comunidade" e depois só chamar. (<strong>CORRIGIDO</strong> com o padrão de projeto "Command")</li>
   </ul>
   <li><strong>Trechos desnecessários de código</strong></li>
     <ul>
